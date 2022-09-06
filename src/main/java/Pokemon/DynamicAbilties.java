@@ -1,6 +1,5 @@
 package Pokemon;
 
-import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -10,7 +9,7 @@ public class DynamicAbilties {
     @Test(dataProvider ="ReplaceMoves")
     public void addBook(String moves1, String moves2){
         String response = Payloads.AbilityParalysis(moves1,moves2).toString();
-        JsonPath js = ReuseMethods.rawtoJSON(response);
+        JsonPath js = Utilities.rawtoJSON(response);
         String firstmove = js.get("moves[0].name");
         String Secondmove = js.get("moves[1].name");
         System.out.println("@@@@@@@@@@ First move added @@@@@@@@@");

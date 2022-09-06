@@ -2,36 +2,44 @@ package Pokemon;
 
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
-import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import static io.restassured.RestAssured.given;
 
-public class Snorlax {
-    @Test
-    public void GetSnorlaxAbilities() {
-        RestAssured.baseURI = "https://pokeapi.co/api/v2/pokemon/snorlax";
-        String response = given().get("https://pokeapi.co/api/v2/pokemon/snorlax").
-                then().log().all().assertThat().statusCode(200)
-                .extract().response().asString();
-        JsonPath js = ReuseMethods.rawtoJSON(Payloads.SNorlaxAbilties());
-        String Thickfat= js.get("abilities.ability[1].name");
-        System.out.println("Snorlax move:  "+ Thickfat);
+public class Snorlax extends SnorlaxActualData{
 
-        // Validate the response
+//    String response = given().get("https://pokeapi.co/api/v2/pokemon/snorlax").
+//            then().log().all().assertThat().statusCode(200)
+//            .extract().response().asString();
+    @Test(priority = 1)
+    public void GetSnorlaxThick_Fat() {
+        RestAssured.baseURI = "https://pokeapi.co/api/v2/pokemon/snorlax";
+        JsonPath js = Utilities.rawtoJSON(Payloads.SNorlaxAbilties());
+        System.out.println("Snorlax move:  "+ Thickfat);
         Assert.assertEquals(Thickfat,"thick-fat");
+        // Validate the response
         System.out.println("If no issues in assertion then: Snorlax Move :Thick-fat is True");
-//        for (String ability: Abilities) {
-//        }
-//
-//        }
-//        String Slot = js.get("abilities[1].slot");
-//        System.out.println(Slot);
+        // validate url for thick-fat
+        System.out.println("Actual Thick-fat url:  " + Actualthick_fatURL);
+        Assert.assertEquals(Actualthick_fatURL,Expectthick_fatURL);
+        System.out.println("Actual thick-fat url = expected Url - Test Passed");
+        // validate is hidden or not booleon
+        System.out.println(Snorlaxhidden);
+        // Validate the response
+        Assert.assertEquals("false", Snorlaxhidden);
+        System.out.println("snorlax thick-fat ishidden = " +Snorlaxhidden +
+                " Assertion matches expected thus test has passed");
+        System.out.println(abilitySlot);
+        Integer Actualthickfat_slot = 2;
+        // Validate the response
+        Assert.assertEquals(abilitySlot,Actualthickfat_slot);
+        System.out.println("No issues= assertion passed thick-fat slot num is True:  "+ Actualthickfat_slot);
+
+    }
+    @Test(priority = 0)
+    public void GetSnorlaxGluttony() {
+        RestAssured.baseURI = "https://pokeapi.co/api/v2/pokemon/snorlax";
+        JsonPath js = Utilities.rawtoJSON(Payloads.SNorlaxAbilties());
     }
 }
