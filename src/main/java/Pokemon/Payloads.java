@@ -94,7 +94,7 @@ public class Payloads {
 
     }
 
-    public static String Ability (){
+    public static String Ability() {
 
         return "{\n" +
                 "    \"count\": 327,\n" +
@@ -185,16 +185,16 @@ public class Payloads {
                 "}";
     }
 
-    public static String AbilityParalysis(String move1, String move2){
+    public static String AbilityParalysis(String move1, String move2) {
         return "{\n" +
                 "    \"id\": 1,\n" +
                 "    \"moves\": [\n" +
                 "        {\n" +
-                "            \"name\": \""+move1+"\",\n" +
+                "            \"name\": \"" + move1 + "\",\n" +
                 "            \"url\": \"https://pokeapi.co/api/v2/move/9/\"\n" +
                 "        },\n" +
                 "        {\n" +
-                "            \"name\": \""+move2+"\",\n" +
+                "            \"name\": \"" + move2 + "\",\n" +
                 "            \"url\": \"https://pokeapi.co/api/v2/move/34/\"\n" +
                 "        },\n" +
                 "        {\n" +
@@ -308,4 +308,38 @@ public class Payloads {
                 "    ]\n" +
                 "}";
     }
+
+    public static String SNorlaxAbilties() {
+        return "{\n" +
+                "    \"abilities\": [\n" +
+                "        {\n" +
+                "            \"ability\": {\n" +
+                "                \"name\": \"immunity\",\n" +
+                "                \"url\": \"https://pokeapi.co/api/v2/ability/17/\"\n" +
+                "            },\n" +
+                "            \"is_hidden\": false,\n" +
+                "            \"slot\": 1\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"ability\": {\n" +
+                "                \"name\": \"thick-fat\",\n" +
+                "                \"url\": \"https://pokeapi.co/api/v2/ability/47/\"\n" +
+                "            },\n" +
+                "            \"is_hidden\": false,\n" +
+                "            \"slot\": 2\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"ability\": {\n" +
+                "                \"name\": \"gluttony\",\n" +
+                "                \"url\": \"https://pokeapi.co/api/v2/ability/82/\"\n" +
+                "            },\n" +
+                "            \"is_hidden\": true,\n" +
+                "            \"slot\": 3\n" +
+                "        }\n" +
+                "    ]," +
+                "\"weight\": 4600\n" +
+                "}";
+    }
+
+
 }
