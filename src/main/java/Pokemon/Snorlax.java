@@ -41,5 +41,24 @@ public class Snorlax extends SnorlaxActualData{
     public void GetSnorlaxGluttony() {
         RestAssured.baseURI = "https://pokeapi.co/api/v2/pokemon/snorlax";
         JsonPath js = Utilities.rawtoJSON(Payloads.SNorlaxAbilties());
+        System.out.println("Snorlax move:  "+ Immunity);
+        Assert.assertEquals(Immunity,"immunity");
+        // Validate the response
+        System.out.println("If no issues in assertion then: Snorlax Move :immunity is True");
+        // validate url for immunity
+        System.out.println("Actual immunity url:  " + ActualImmunityUrl);
+        Assert.assertEquals(ActualImmunityUrl,ExpctImmunityUrl);
+        System.out.println("Actual immunity url = expected Url - Test Passed");
+        // validate is hidden or not booleon
+        System.out.println(ImmunityHidden);
+        // Validate the response
+        Assert.assertEquals("false", ImmunityHidden);
+        System.out.println("snorlax immunity ishidden = " +ImmunityHidden +
+                " Assertion matches expected thus test has passed");
+        System.out.println(abilitySlot0);
+        Integer ActualImmunitySlot = 1;
+        // Validate the response
+            Assert.assertEquals(abilitySlot0,  ActualImmunitySlot);
+        System.out.println("No issues= assertion passed immunity slot num is True:  "+ abilitySlot0);
     }
 }
