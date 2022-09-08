@@ -42,8 +42,18 @@ public class pickachu extends pikachuActualData {
         }
         else {
             System.out.println("Test passed for slot verification");
+
+
+
         }
-    }
+
+        Boolean isStaticUrl = ActualStaitcUrl == ExpctStaitcUrl;
+        Boolean isStaticSlot = ActualStaitcSlot == ExpectedStaitcSlot;
+            Boolean isStaticiHidden = StaticHidden == ExpectedinHidden;
+            Assert.assertTrue(isStaticUrl || isStaticSlot ||isStaticiHidden," isStaticUrl: "+isStaticUrl+" isStaticSlot: " +isStaticSlot + " isStaticisHidden: "+ isStaticiHidden);
+            }
+
+
     @Test(priority = 1)
     public void PikachuLightning_rod() {
         System.out.println("-----------------------");
@@ -58,8 +68,11 @@ public class pickachu extends pikachuActualData {
         if (Actuallightning_rodUrl != Expctlightning_rodUrl){
             System.out.println("Test failed #1; URLs do not match");
         }
-        else{
+        else if(Actuallightning_rodUrl== Expctlightning_rodUrl){
             System.out.println("Test passed URL match");
+        }
+        else {
+            System.out.println("Error in code");
         }
         // validate is hidden or not booleon
         System.out.println("this is actual ishidden value for static: "+ActualLightning_rodHidden);
