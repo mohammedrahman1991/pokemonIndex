@@ -364,6 +364,29 @@ public class Payloads {
                 "\"weight\": 4600\n" +
                 "}";
     }
+    public static String charizardPayload(){
+        return "{\n" +
+                "    \"abilities\": [\n" +
+                "        {\n" +
+                "            \"ability\": {\n" +
+                "                \"name\": \"blaze\",\n" +
+                "                \"url\": \"https://pokeapi.co/api/v2/ability/66/\"\n" +
+                "            },\n" +
+                "            \"is_hidden\": false,\n" +
+                "            \"slot\": 1\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"ability\": {\n" +
+                "                \"name\": \"solar-power\",\n" +
+                "                \"url\": \"https://pokeapi.co/api/v2/ability/94/\"\n" +
+                "            },\n" +
+                "            \"is_hidden\": true,\n" +
+                "            \"slot\": 3\n" +
+                "        }\n" +
+                "    ],"+
+                "\"weight\": 4600\n" +
+                "}";
+    }
 
 
 }

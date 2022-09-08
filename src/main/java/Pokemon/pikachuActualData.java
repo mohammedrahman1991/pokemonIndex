@@ -17,7 +17,8 @@ public class pikachuActualData extends Utilities{
     String lightning_rod = js.get("abilities.ability[1].name");
     String Expctlightning_rodUrl = "https://pokeapi.co/api/v2/ability/31/";
     String Actuallightning_rodUrl = js.get("abilities.ability[1].url");
-    String lightning_rodHidden = js.get("abilities.is_hidden[1]").toString();
+    boolean ActualLightning_rodHidden = js.get("abilities.is_hidden[1]");
+    boolean Expectedlightning_rodisHidden = false;
     Integer Actuallightning_rodSlot = js.getInt("abilities.slot[1]");
     Integer Expectedlightning_rodSlot = 1;
 

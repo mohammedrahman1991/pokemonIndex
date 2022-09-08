@@ -10,7 +10,7 @@ public class pickachu extends pikachuActualData {
     @Test(priority = 0)
     public void PikachuStatic() {
         System.out.println("-----------------------");
-        RestAssured.baseURI = "https://pokeapi.co/api/v2/pokemon/snorlax";
+        RestAssured.baseURI = "https://pokeapi.co/api/v2/pokemon/pikachu";
         JsonPath js = Utilities.rawtoJSON(Payloads.pikachuPayload());
         System.out.println("Pikachu move:  "+ Staticc);
         Assert.assertEquals(Staticc,"static");
@@ -44,4 +44,44 @@ public class pickachu extends pikachuActualData {
             System.out.println("Test passed for slot verification");
         }
     }
+    @Test(priority = 1)
+    public void PikachuLightning_rod() {
+        System.out.println("-----------------------");
+        RestAssured.baseURI = "https://pokeapi.co/api/v2/pokemon/pikachu";
+        JsonPath js = Utilities.rawtoJSON(Payloads.pikachuPayload());
+        System.out.println("Pikachu move:  "+ lightning_rod);
+        Assert.assertEquals(lightning_rod,"lightning-rod");
+        // Validate the response
+        System.out.println("If no issues in assertion then: Pikachu Move :lightning-rod is True");
+        // validate url for static
+        System.out.println("Actual lightning-rod url:  " + Actuallightning_rodUrl);
+        if (Actuallightning_rodUrl != Expctlightning_rodUrl){
+            System.out.println("Test failed #1; URLs do not match");
+        }
+        else{
+            System.out.println("Test passed URL match");
+        }
+        // validate is hidden or not booleon
+        System.out.println("this is actual ishidden value for static: "+ActualLightning_rodHidden);
+        System.out.println("this is expected ishidden value from chart: "+Expectedlightning_rodisHidden);
+        // Validate the response
+        if (ActualLightning_rodHidden == Expectedlightning_rodisHidden){
+            System.out.println("Test passed for isHidden value");
+        }
+        else {
+            System.out.println("Test #2 failed IsHidden value does not match");
+        }
+        System.out.println("This is expected slot of move int value: "+Expectedlightning_rodSlot);
+        System.out.println("This is Actual slot of move int value: "+Actuallightning_rodSlot);
+        // Validate the response
+        if (Actuallightning_rodSlot != Expectedlightning_rodSlot){
+            System.out.println("Test #3: failed, slot value mismatch: " + Actuallightning_rodSlot
+                    + " does not equal:" + Expectedlightning_rodSlot);
+        }
+        else {
+            System.out.println("Test passed for slot verification");
+        }
+    }
+
+
 }
