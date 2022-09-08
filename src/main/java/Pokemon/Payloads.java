@@ -341,5 +341,29 @@ public class Payloads {
                 "}";
     }
 
+    public static String pikachuPayload(){
+        return "{\n" +
+                "    \"abilities\": [\n" +
+                "        {\n" +
+                "            \"ability\": {\n" +
+                "                \"name\": \"static\",\n" +
+                "                \"url\": \"https://pokeapi.co/api/v2/ability/9/\"\n" +
+                "            },\n" +
+                "            \"is_hidden\": false,\n" +
+                "            \"slot\": 1\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"ability\": {\n" +
+                "                \"name\": \"lightning-rod\",\n" +
+                "                \"url\": \"https://pokeapi.co/api/v2/ability/31/\"\n" +
+                "            },\n" +
+                "            \"is_hidden\": true,\n" +
+                "            \"slot\": 3\n" +
+                "        }\n" +
+                "    ],"+
+                "\"weight\": 4600\n" +
+                "}";
+    }
+
 
 }
