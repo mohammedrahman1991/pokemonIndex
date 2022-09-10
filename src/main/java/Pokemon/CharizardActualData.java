@@ -14,7 +14,7 @@ public class CharizardActualData extends Utilities{
 
     //2nd move
 
-    String solar_powerU = js.get("abilities.ability[1].name");
+    String solar_power = js.get("abilities.ability[1].name");
     String Expctsolar_powerUrl = "https://pokeapi.co/api/v2/ability/94/";
     String Actualsolar_powerUrl = js.get("abilities.ability[1].url");
     boolean Actualsolar_powerHidden = js.get("abilities.is_hidden[1]");

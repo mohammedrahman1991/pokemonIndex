@@ -43,8 +43,6 @@ public class pickachu extends pikachuActualData {
         else {
             System.out.println("Test passed for slot verification");
 
-
-
         }
 
         Boolean isStaticUrl = ActualStaitcUrl == ExpctStaitcUrl;
@@ -94,7 +92,15 @@ public class pickachu extends pikachuActualData {
         else {
             System.out.println("Test passed for slot verification");
         }
+        //assertions
+        Boolean islt_rodUrl = ActualStaitcUrl == ExpctStaitcUrl;
+        Boolean isLr_RodSlot = ActualStaitcSlot == ExpectedStaitcSlot;
+        Boolean isLr_RodiHidden = StaticHidden == ExpectedinHidden;
+        Assert.assertTrue(islt_rodUrl || isLr_RodSlot ||isLr_RodiHidden," isStaticUrl: "+islt_rodUrl+" isStaticSlot: " +isLr_RodSlot + " isStaticisHidden: "+ isLr_RodiHidden);
     }
 
 
-}
+    }
+
+
+
