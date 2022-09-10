@@ -94,7 +94,7 @@ public class pickachu extends pikachuActualData {
         //assertions
         Boolean islt_rodUrl = Actuallightning_rodUrl.equals(Expctlightning_rodUrl);
         Boolean isLr_RodSlot = Actuallightning_rodSlot.equals(Expectedlightning_rodSlot);
-        Boolean isLr_RodiHidden = StaticHidden == ExpectedinHidden;
+        Boolean isLr_RodiHidden = ActualLightning_rodHidden == Expectedlightning_rodisHidden;
         Assert.assertTrue(islt_rodUrl &&  isLr_RodSlot && isLr_RodiHidden,
                 " islt_rodUrl: "+islt_rodUrl+" isLr_RodSlot: " +isLr_RodSlot + " isLr_RodiHidden: "+ isLr_RodiHidden);
     }
