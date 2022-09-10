@@ -26,19 +26,24 @@ public class Snorlax extends SnorlaxActualData{
         // validate url for thick-fat
         System.out.println("Actual Thick-fat url:  " + Actualthick_fatURL);
         Assert.assertEquals(Actualthick_fatURL,Expectthick_fatURL);
-        System.out.println("Actual thick-fat url = expected Url - Test Passed");
+        System.out.println("Actual thick-fat url = "+Expectthick_fatURL+ " #1: Test Passed");
         // validate is hidden or not booleon
-        System.out.println(Snorlaxhidden);
+        System.out.println("Actual THICKFAT ISHIDDEN value: "+ActualTHIC_FATisHidden);
         // Validate the response
-        Assert.assertEquals("false", Snorlaxhidden);
-        System.out.println("snorlax thick-fat ishidden = " +Snorlaxhidden +
-                " Assertion matches expected thus test has passed");
-        System.out.println(abilitySlot);
-        Integer Actualthickfat_slot = 2;
-        // Validate the response
-        Assert.assertEquals(abilitySlot,Actualthickfat_slot);
-        System.out.println("No issues= assertion passed thick-fat slot num is True:  "+ Actualthickfat_slot);
+        Assert.assertEquals(ActualTHIC_FATisHidden, ExpectedisThic_fatsHidden);
+        System.out.println(" #2: Test passed: "+ActualTHIC_FATisHidden+" == "+ ExpectedisThic_fatsHidden);
+        System.out.println("Expected slot value: "+ExpedabilitySlot);
 
+        // Validate the response
+        Assert.assertEquals(ExpedabilitySlot,Actualthickfat_slot);
+        System.out.println("#3: Test passed No" +
+                " issues= assertion passed thick-fat slot num is True:  "+ Actualthickfat_slot);
+
+        Boolean IsThic_fatURL = Actualthick_fatURL.equals(Expectthick_fatURL);
+        Boolean isThic_fatlot = Actualthickfat_slot.equals(ExpedabilitySlot);
+        Boolean isThic_fatsHidden = ActualTHIC_FATisHidden  == ExpectedisThic_fatsHidden;
+        Assert.assertTrue(IsThic_fatURL  &&  isThic_fatlot && isThic_fatsHidden," IsThic_fatURL: "+IsThic_fatURL+"" +
+                " isThic_fatlot: " +isThic_fatlot+ " isThic_fatsHidden: "+ isThic_fatsHidden );
     }
     @Test(priority = 0)
     public void GetSnorlaxImmunity() {
@@ -54,18 +59,25 @@ public class Snorlax extends SnorlaxActualData{
         Assert.assertEquals(ActualImmunityUrl,ExpctImmunityUrl);
         System.out.println("Actual immunity url = expected Url - Test Passed");
         // validate is hidden or not booleon
-        System.out.println(ImmunityHidden);
+        System.out.println("Expected isHidden Immunity value: "+ExpectedImmunityHidden);
         // Validate the response
-        Assert.assertEquals("false", ImmunityHidden);
-        System.out.println("snorlax immunity ishidden = " +ImmunityHidden +
+        Assert.assertEquals(ActualImmunityHidden, ExpectedImmunityHidden);
+        System.out.println("snorlax immunity ishidden = " +ActualImmunityHidden +
                 " Assertion matches expected thus test has passed");
         System.out.println("Actual immuinty move slot num: "+ActualImmunitySlot);
         // Validate the response
         System.out.println(" expected immunity slot num: "+ ExpectedImmunitySlot);
-        if (ExpectedImmunitySlot != ActualImmunitySlot){
-            System.out.println("Slot does not match Test fail");
+        if (ExpectedImmunitySlot.equals(ActualImmunitySlot)){
+            System.out.println("Slot does  match Test passed");
         }
-//            Assert.assertEquals(ActualImmunitySlot,  ExpectedImmunitySlot);
+        else{
+            System.out.println("Test failed slots dont match");
+        }
+        Boolean isImmunityUrl= ActualImmunityUrl.equals(ExpctImmunityUrl);
+        Boolean isLrImmunitySlot = ActualImmunitySlot.equals(ExpectedImmunitySlot);
+        Boolean isImmunityisHidden = ActualImmunityHidden == ExpectedImmunityHidden;
+        Assert.assertTrue(isImmunityUrl && isLrImmunitySlot  && isImmunityisHidden," isImmunityUrl "+ isImmunityUrl +" isLrImmunitySlot  " +isLrImmunitySlot  + " isImmunityisHidden: "+ isImmunityisHidden);
+//        Assert.assertEquals(ActualImmunitySlot,ExpectedImmunitySlot);
     }
     // test for snorlax glutony
     @Test(priority = 2)
@@ -85,7 +97,7 @@ public class Snorlax extends SnorlaxActualData{
 //                    "so we can test other aspects of program");
 //        }
 
-        if (Actual_GluttonyURL == Expect_GluttonyURL){
+        if (Actual_GluttonyURL.equals(Expect_GluttonyURL)){
             System.out.println("GluttonyURL is fine");
         }
         else {
@@ -94,24 +106,26 @@ public class Snorlax extends SnorlaxActualData{
         }
         // validate is hidden or not booleon
 //        Boolean = Gluttonyhidden = true;
-        System.out.println(" glutony ishidden value: " + Gluttonyhidden);
+        System.out.println(" glutony ishidden value: " + ActualGluttonyhidden);
         // Validate the response
-        Assert.assertEquals(true, Gluttonyhidden);
-        System.out.println("snorlax Gluttony is hidden = " +Gluttonyhidden +
+        Assert.assertEquals(ActualGluttonyhidden, ExpectedGlutonyIsHidden);
+        System.out.println("snorlax Gluttony is hidden = " +ActualGluttonyhidden+
                 " Assertion matches expected thus test has passed");
         System.out.println( "This is actual slot number: " + ActualGluttonySlot);
         System.out.println( "This is expected slot number: " + ExpctGluttonySlot );
         // Validate the response
-        if (ActualGluttonySlot == ExpctGluttonySlot){
+        if (ActualGluttonySlot.equals(ExpctGluttonySlot)){
             System.out.println("GluttonySLOT is fine; test passed");
         }
         else {System.out.println("This assertion / Test fails because " +
                 " this is report: Actual gluttony Slot [: " + ActualGluttonySlot + " ] but expected [: " + ExpctGluttonySlot + " ]");
         }
-//        Assert.assertEquals(ActualGluttonySlot, ExpctGluttonySlot);
-        System.out.println("Test ran despite 2 assertion errors");
+        //Assert all
+        Boolean isIGlutonyUrl= Actual_GluttonyURL.equals(Expect_GluttonyURL);
+        Boolean isGluttonySlot = ActualGluttonySlot.equals(ExpctGluttonySlot);
+        Boolean isGlutonyisHidden = ActualGluttonyhidden == ExpectedGlutonyIsHidden;
+        Assert.assertTrue(isIGlutonyUrl && isGluttonySlot  && isGlutonyisHidden," isIGlutonnyUrl "
+                + isIGlutonyUrl +" isGluttonySlot  " +isGluttonySlot  + " isImmunityisHidden: "+ isGlutonyisHidden);
     }
-
-
 
 }

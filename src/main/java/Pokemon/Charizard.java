@@ -17,11 +17,11 @@ public class  Charizard extends CharizardActualData{
         System.out.println("If no issues in assertion then: Charizard Move :blaze is True");
         // validate url for blaze
         System.out.println("Actual blaze  " + ActualblazeUrl);
-        if (ActualblazeUrl != ExpctblazeUrl){
-            System.out.println("Test failed #1; URLs do not match");
+        if (ActualblazeUrl.equals(ExpctblazeUrl)){
+            System.out.println("Test passed ; URLs do match");
         }
         else{
-            System.out.println("Test passed URL match");
+            System.out.println("Test failed URL no match");
         }
         // validate is hidden or not booleon
         System.out.println("this is actual ishidden value for blaze: "+blazeHidden);
@@ -42,6 +42,11 @@ public class  Charizard extends CharizardActualData{
         else {
             System.out.println("Test passed for slot verification");
         }
+        Boolean IsBladeURL = ActualblazeUrl.equals(ExpctblazeUrl);
+        Boolean isBlazeSlot = ActualblazeSlot.equals(ExpectedblazeSlot);
+        Boolean isBlazeisHidden = blazeHidden == ExpectedblazeinHidden;
+        Assert.assertTrue(IsBladeURL  && isBlazeSlot  && isBlazeisHidden ," isStaticUrl: "+IsBladeURL+"" +
+                " isStaticSlot: " +isBlazeSlot + " isStaticisHidden: "+ isBlazeisHidden );
     }
     @Test(priority = 1)
     public void CharizardSolarPower() {
@@ -56,15 +61,15 @@ public class  Charizard extends CharizardActualData{
         System.out.println("Expected solar_power URL: "+Expctsolar_powerUrl);
         Assert.assertEquals(Actualsolar_powerUrl,Expctsolar_powerUrl);
         System.out.println("Test passed #1; URLs do match");
-//        if (Actualsolar_powerUrl == Expctsolar_powerUrl){
-//            System.out.println("Test failed #1; URLs do not match");
-//        }
-////        else if(Actualsolar_powerUrl== Expctsolar_powerUrl){
-////            System.out.println("Test passed URL match");
-////        }
-//        else {
-//            System.out.println("Error in code");
-        // }
+
+//        Code below does not work but assertion above does -- why?
+
+        if (Actualsolar_powerUrl.equals(Expctsolar_powerUrl)){
+            System.out.println("Test passed  #1; URLs  match");
+        }
+        else {
+            System.out.println("Error in code, Test  failed URL do not match");
+         }
         // validate is hidden or not booleon
         System.out.println("this is actual ishidden value for solar_power: "+Actualsolar_powerHidden);
         System.out.println("this is expected ishidden value from chart of solar_power : "+Expectedsolar_powerisHidden);
@@ -86,10 +91,10 @@ public class  Charizard extends CharizardActualData{
             System.out.println("Test passed for slot verification");
         }
 
-        Boolean isSolar_PowerUrl = Actualsolar_powerUrl == Expctsolar_powerUrl;
-        Boolean isSoar_PowerSlot = Actualsolar_powerSlot== Expectedsolar_powerSlot;
+        Boolean isSolar_PowerUrl = Actualsolar_powerUrl.equals(Expctsolar_powerUrl);
+        Boolean isSoar_PowerSlot = Actualsolar_powerSlot.equals(Expectedsolar_powerSlot);
         Boolean isSolar_PowerHidden = Actualsolar_powerHidden == Expectedsolar_powerisHidden;
-        Assert.assertTrue(isSolar_PowerUrl  || isSoar_PowerSlot  ||isSolar_PowerHidden ," isStaticUrl: "+isSolar_PowerUrl+" isStaticSlot: " +isSoar_PowerSlot  + " isStaticisHidden: "+ isSolar_PowerHidden );
+        Assert.assertTrue(isSolar_PowerUrl  &&  isSoar_PowerSlot  && isSolar_PowerHidden ," isStaticUrl: "+isSolar_PowerUrl+" isStaticSlot: " +isSoar_PowerSlot  + " isStaticisHidden: "+ isSolar_PowerHidden );
     }
 
 }

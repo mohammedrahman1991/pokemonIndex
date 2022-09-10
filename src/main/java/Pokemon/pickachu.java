@@ -37,18 +37,19 @@ public class pickachu extends pikachuActualData {
         System.out.println("This is expected slot of move int value: "+ExpectedStaitcSlot);
         System.out.println("This is Actual slot of move int value: "+ActualStaitcSlot);
         // Validate the response
-        if (ActualStaitcSlot != ExpectedStaitcSlot) {
-            System.out.println("Test #3: failed, slot value mismatch: " + ActualStaitcSlot);
+        // This is a conditional statement that is checking if the actual slot value is equal to the expected slot value.
+        if (ActualStaitcSlot.equals(ExpectedStaitcSlot)) {
+            System.out.println("Test passed for slot verification: " + ActualStaitcSlot);
         }
         else {
-            System.out.println("Test passed for slot verification");
+            System.out.println("Test #3: failed, slot value mismatch: ");
 
         }
 
         Boolean isStaticUrl = ActualStaitcUrl == ExpctStaitcUrl;
         Boolean isStaticSlot = ActualStaitcSlot == ExpectedStaitcSlot;
             Boolean isStaticiHidden = StaticHidden == ExpectedinHidden;
-            Assert.assertTrue(isStaticUrl || isStaticSlot ||isStaticiHidden," isStaticUrl: "+isStaticUrl+" isStaticSlot: " +isStaticSlot + " isStaticisHidden: "+ isStaticiHidden);
+            Assert.assertTrue(isStaticUrl &&  isStaticSlot && isStaticiHidden," isStaticUrl: "+isStaticUrl+" isStaticSlot: " +isStaticSlot + " isStaticisHidden: "+ isStaticiHidden);
             }
 
 
@@ -96,7 +97,7 @@ public class pickachu extends pikachuActualData {
         Boolean islt_rodUrl = ActualStaitcUrl == ExpctStaitcUrl;
         Boolean isLr_RodSlot = ActualStaitcSlot == ExpectedStaitcSlot;
         Boolean isLr_RodiHidden = StaticHidden == ExpectedinHidden;
-        Assert.assertTrue(islt_rodUrl || isLr_RodSlot ||isLr_RodiHidden," isStaticUrl: "+islt_rodUrl+" isStaticSlot: " +isLr_RodSlot + " isStaticisHidden: "+ isLr_RodiHidden);
+        Assert.assertTrue(islt_rodUrl &&  isLr_RodSlot && isLr_RodiHidden," islt_rodUrl: "+islt_rodUrl+" isLr_RodSlot: " +isLr_RodSlot + " isLr_RodiHidden: "+ isLr_RodiHidden);
     }
 
 
