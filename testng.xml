@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="/Users/mohammedrahman/PokemonAutomationviaRest">
+        <classes>
+            <class name="Pokemon.Charizard">
+                <methods>
+                    <include name="CharizardBlaze"/>
+                    <include name="CharizardSolarPower"/>
+                </methods>
+            </class>
+            <class name="Pokemon.DynamicAbilties">
+                <methods>
+                    <include name="addBook"/>
+                </methods>
+            </class>
+            <class name="Pokemon.Snorlax">
+                <methods>
+                    <include name="GetSnorlaxThick_Fat"/>
+                    <include name="GetSnorlaxImmunity"/>
+                    <include name="GetSnorlaxGluttony"/>
+                </methods>
+            </class>
+            <class name="Pokemon.pickachu">
+                <methods>
+                    <include name="PikachuStatic"/>
+                    <include name="PikachuLightning_rod"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
